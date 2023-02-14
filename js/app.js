@@ -49,6 +49,9 @@ const teamPeople = [
 
 console.log(teamPeople)
 
+// Recuperare tbody dall'HTML
+const team = document.getElementById('team')
+
 for (let i in teamPeople) {
     const currentPerson = teamPeople[i]
 
@@ -58,7 +61,20 @@ for (let i in teamPeople) {
 
     console.log(fullName, role, avatar)
 
+    // Stampare sul DOM le informazioni come stringhe
+    
+    const tr = `
+    <tr>
+        <td> ${ fullName } </td>
+        <td> ${ role } </td>
+        <td> ${ avatar } </td>
+    </tr>
+    `
+
+    team.innerHTML += tr
 }
+
+
 
 
 /////////////////////// FUNZIONI ////////////////////
