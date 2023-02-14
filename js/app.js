@@ -63,19 +63,10 @@ for (let i in teamPeople) {
 
     // Stampare sul DOM le informazioni come stringhe
     
-    const tr = `
-    <tr>
-        <td> ${ fullName } </td>
-        <td> ${ role } </td>
-        <td> ${ avatar } </td>
-    </tr>
-    `
+    const tr = crateTr(fullName, role, avatar)
 
     team.innerHTML += tr
 }
-
-
-
 
 /////////////////////// FUNZIONI ////////////////////
 
@@ -84,4 +75,14 @@ function isFullName() {
     const lastName = this['lastName']
 
     return firstName + ' ' + lastName
+}
+
+function crateTr(fullName, role, avatar) {
+    return `
+    <tr>
+        <td> ${fullName} </td>
+        <td> ${role} </td>
+        <td> ${avatar} </td>
+    </tr>
+    `
 }

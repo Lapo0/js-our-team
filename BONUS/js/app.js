@@ -63,23 +63,10 @@ for (let i in teamPeople) {
 
     // Stampare sul DOM le informazioni come stringhe
     
-    const col = `
-    <div class="col-4 text-center py-3">
-        <div class="card" style="width: 18rem;">
-            <img src=" ./img/${ avatar } " class="card-img-top">
-            <div class="card-body">
-                <h4> ${ fullName } </h4>
-                <p class="card-text"> ${ role } </p>
-            </div>
-            </div>
-    </div>
-    `
+    const col = createCard(avatar, fullName, role)
 
     teamCard.innerHTML += col
 }
-
-
-
 
 /////////////////////// FUNZIONI ////////////////////
 
@@ -88,4 +75,18 @@ function isFullName() {
     const lastName = this['lastName']
 
     return firstName + ' ' + lastName
+}
+
+function createCard(avatar, fullName, role) {
+    return `
+    <div class="col-4 text-center py-3">
+        <div class="card" style="width: 18rem;">
+            <img src=" ./img/${avatar} " class="card-img-top">
+            <div class="card-body">
+                <h4> ${fullName} </h4>
+                <p class="card-text"> ${role} </p>
+            </div>
+            </div>
+    </div>
+    `
 }
